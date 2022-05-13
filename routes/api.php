@@ -71,3 +71,6 @@ Route::get('/notification', [NotificationController::class, 'NotificationHistory
 
 // search route
 Route::get('/search/{key}', [ProductListController::class, 'ProductBySearch']);
+
+// similiar product route
+Route::get('/similar/{subcategory}', [ProductListController::class, 'SimilarProduct']);
