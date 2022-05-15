@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ProductCart;
 use App\Models\ProductList;
+use App\Models\CartOrder;
 
 class ProductCartController extends Controller
 {
@@ -48,7 +49,7 @@ class ProductCartController extends Controller
     }
     public function CartCount(Request $request)
     {
-        $product_code = $request->product_code;
+        $email = $request->email;
         $result = ProductCart::count();
         return $result;
     }
@@ -91,5 +92,9 @@ class ProductCartController extends Controller
         $result = ProductCart::where('id', $id)->update(['quantity' => $newQuantity, 'total_price' => $total_price]);
 
         return $result;
+    }
+
+    public function CartOrder()
+    {
     }
 }
