@@ -15,7 +15,7 @@ class CreateProductReviewsTable extends Migration
     {
         Schema::create('product_reviews', function (Blueprint $table) {
             $table->id();
-            $table->integer('product_id');
+            $table->integer('product_code');
             $table->string('product_name');
             $table->string('reviewer_name');
             $table->string('reviewer_photo');
