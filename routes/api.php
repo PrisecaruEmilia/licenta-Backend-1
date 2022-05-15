@@ -88,3 +88,5 @@ Route::post('/addtocart', [ProductCartController::class, 'addToCart']);
 Route::get('/cartcount/{product_code}', [ProductCartController::class, 'CartCount']);
 // Favourite Route
 Route::post('/favorite/{product_code}/{email}', [FavoriteController::class, 'AddFavorite']);
+
+Route::get('/favoritelist/{email}', [FavoriteController::class, 'FavoriteList']);
