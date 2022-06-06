@@ -85,4 +85,17 @@ class SliderController extends Controller
 
         return redirect()->route('all.slider')->with($notification);
     } // End Mehtod
+
+    public function DeleteSlider($id)
+    {
+
+        HomeSlider::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Slider Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    } // End Mehtod
 }
