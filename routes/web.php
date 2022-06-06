@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,4 +50,9 @@ Route::prefix('admin')->group(function () {
     Route::get('/change/password', [AdminController::class, 'ChangePassword'])->name('change.password');
 
     Route::post('/change/password/update', [AdminController::class, 'ChangePasswordUpdate'])->name('change.password.update');
+});
+
+Route::prefix('category')->group(function () {
+
+    Route::get('/all', [CategoryController::class, 'GetAllCategory'])->name('all.category');
 });
