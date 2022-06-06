@@ -41,11 +41,11 @@
 
 
 
-                            <form method="post" action="{{ route('subcategory.store') }}">
+                            <form method="post" action="{{ route('subcategory.update') }}">
                                 @csrf
 
 
-
+                                <input type="hidden" name="id" value="{{ $subcategory->id }}">
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row mb-3">
