@@ -32,4 +32,14 @@ class CategoryController extends Controller
         $category = Category::latest()->get();
         return view('backend.category.category_view', compact('category'));
     }
+
+    public function AddCategory()
+    {
+        return view('backend.category.category_add');
+    } // End Mehtod
+
+
+    public function StoreCategory(Request $request)
+    {
+    } // End Mehtod
 }
