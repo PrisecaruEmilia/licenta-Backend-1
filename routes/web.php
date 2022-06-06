@@ -91,7 +91,7 @@ Route::prefix('slider')->group(function () {
 
     Route::get('/add', [SliderController::class, 'AddSlider'])->name('add.slider');
 
-    Route::post('/store', [CategoryController::class, 'StoreSubCategory'])->name('subcategory.store');
+    Route::post('/store', [SliderController::class, 'StoreSlider'])->name('slider.store');
 
     Route::get('/edit/{id}', [CategoryController::class, 'EditSubCategory'])->name('subcategory.edit');
 
