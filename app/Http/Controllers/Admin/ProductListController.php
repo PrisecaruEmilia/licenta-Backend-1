@@ -46,7 +46,7 @@ class ProductListController extends Controller
     public function GetAllProduct()
     {
 
-        $products = ProductList::latest()->get();
+        $products = ProductList::latest()->paginate(10);
         return view('backend.product.product_all', compact('products'));
     }
 }
