@@ -65,40 +65,70 @@
 
                                         <div class="mb-3">
                                             <label for="formFile" class="form-label">Image One</label>
-                                            <input class="form-control" name="image_one" type="file">
+                                            <input class="form-control" name="image_one" id="image_one" type="file">
                                         </div>
+
+                                        @foreach ($details as $item)
+                                            <div class="mb-3">
+                                                <img id="showImage1" src="{{ asset($item->image_one) }}"
+                                                    style="width:100px; height: 100px;">
+                                            </div>
+                                        @endforeach
 
                                         <div class="mb-3">
                                             <label for="formFile" class="form-label">Image Two</label>
-                                            <input class="form-control" name="image_two" type="file">
+                                            <input class="form-control" name="image_two" id="image_two" type="file">
                                         </div>
+
+                                        @foreach ($details as $item)
+                                            <div class="mb-3">
+                                                <img id="showImage2" src="{{ asset($item->image_two) }}"
+                                                    style="width:100px; height: 100px;">
+                                            </div>
+                                        @endforeach
 
                                         <div class="mb-3">
                                             <label for="formFile" class="form-label">Image Three</label>
-                                            <input class="form-control" name="image_three" type="file">
+                                            <input class="form-control" name="image_three" id="image_three" type="file">
                                         </div>
+
+                                        @foreach ($details as $item)
+                                            <div class="mb-3">
+                                                <img id="showImage3" src="{{ asset($item->image_three) }}"
+                                                    style="width:100px; height: 100px;">
+                                            </div>
+                                        @endforeach
 
                                         <div class="mb-3">
                                             <label for="formFile" class="form-label">Image Four</label>
-                                            <input class="form-control" name="image_four" type="file">
+                                            <input class="form-control" name="image_four" id="image_four" type="file">
                                         </div>
 
+                                        @foreach ($details as $item)
+                                            <div class="mb-3">
+                                                <img id="showImage4" src="{{ asset($item->image_four) }}"
+                                                    style="width:100px; height: 100px;">
+                                            </div>
+                                        @endforeach
+
+                                        @foreach ($details as $item)
+                                            <div class="mb-3">
+                                                <label for="inputProductDescription" class="form-label">Short
+                                                    Description</label>
+                                                <textarea name="short_description" class="form-control" id="inputProductDescription" rows="3">
+		{{ $item->short_description }}
+	</textarea>
+                                            </div>
 
 
-
-                                        <div class="mb-3">
-                                            <label for="inputProductDescription" class="form-label">Short
-                                                Description</label>
-                                            <textarea name="short_description" class="form-control" id="inputProductDescription" rows="3"></textarea>
-                                        </div>
-
-
-                                        <div class="mb-3">
-                                            <label for="inputProductDescription" class="form-label">Long
-                                                Description</label>
-                                            <textarea id="mytextarea" name="long_description">Hello, World!</textarea>
-                                        </div>
-
+                                            <div class="mb-3">
+                                                <label for="inputProductDescription" class="form-label">Long
+                                                    Description</label>
+                                                <textarea id="mytextarea" name="long_description">
+		{{ $item->long_description }}
+	</textarea>
+                                            </div>
+                                        @endforeach
 
                                     </div>
                                 </div>
@@ -156,7 +186,9 @@
                                             <div class="col-12">
                                                 <label for="inputCollection" class="form-label">Brand </label>
                                                 <select name="brand" class="form-select" id="inputCollection">
-                                                    <option selected="">Select Brand</option>
+                                                    <option selected="">
+                                                        {{ $product->brand }}
+                                                    </option>
                                                     <option value="Tony">Tony</option>
                                                     <option value="Apple">Apple</option>
                                                     <option value="OPPO">OPPO</option>
@@ -165,20 +197,20 @@
                                                 </select>
                                             </div>
 
+                                            @foreach ($details as $item)
+                                                <div class="mb-3">
+                                                    <label class="form-label">Product Size</label>
+                                                    <input type="text" name="size" class="form-control visually-hidden"
+                                                        data-role="tagsinput" value="{{ $item->size }}">
+                                                </div>
 
-                                            <div class="mb-3">
-                                                <label class="form-label">Product Size</label>
-                                                <input type="text" name="size" class="form-control visually-hidden"
-                                                    data-role="tagsinput" value="S,M,L,XL">
-                                            </div>
 
-
-                                            <div class="mb-3">
-                                                <label class="form-label">Product Color</label>
-                                                <input type="text" name="color" class="form-control visually-hidden"
-                                                    data-role="tagsinput" value="Red,White,Black">
-                                            </div>
-
+                                                <div class="mb-3">
+                                                    <label class="form-label">Product Color</label>
+                                                    <input type="text" name="color" class="form-control visually-hidden"
+                                                        data-role="tagsinput" value="{{ $item->color }}">
+                                                </div>
+                                            @endforeach
 
                                             <div class="form-check">
                                                 <input class="form-check-input" name="remark" type="checkbox"
@@ -205,7 +237,7 @@
 
                                             <div class="col-12">
                                                 <div class="d-grid">
-                                                    <button type="submit" class="btn btn-primary">Save Product</button>
+                                                    <button type="submit" class="btn btn-primary">Update Product</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -235,6 +267,34 @@
                 var reader = new FileReader();
                 reader.onload = function(e) {
                     $('#showImage').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            });
+            $('#image_one').change(function(e) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#showImage1').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            });
+            $('#image_two').change(function(e) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#showImage2').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            });
+            $('#image_three').change(function(e) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#showImage3').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            });
+            $('#image_four').change(function(e) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#showImage4').attr('src', e.target.result);
                 }
                 reader.readAsDataURL(e.target.files['0']);
             });
