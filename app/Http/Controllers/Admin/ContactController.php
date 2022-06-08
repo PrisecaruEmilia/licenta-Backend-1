@@ -30,4 +30,11 @@ class ContactController extends Controller
 
         return $result;
     }
+
+    public function GetAllMessage()
+    {
+
+        $message = Contact::latest()->get();
+        return view('backend.contact.contact_all', compact('message'));
+    }
 }
