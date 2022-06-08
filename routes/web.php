@@ -128,3 +128,4 @@ Route::get('/review/delete/{id}', [ReviewController::class, 'DeleteReview'])->na
 
 /// Site Info Route
 Route::get('/getsite/info', [SiteInfoController::class, 'GetSiteInfo'])->name('getsite.info');
+Route::post('/update/siteinfo', [SiteInfoController::class, 'UpdateSiteInfo'])->name('update.siteinfo');

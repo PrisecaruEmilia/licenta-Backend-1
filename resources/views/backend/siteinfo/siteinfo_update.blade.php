@@ -36,10 +36,10 @@
 
 
 
-                            <form method="post" action="{{ route('change.password.update') }}">
+                            <form method="post" action="{{ route('update.siteinfo') }}">
                                 @csrf
 
-
+                                <input type="hidden" name="id" value="{{ $siteinfo->id }}">
 
 
                                 <div class="card">
@@ -72,7 +72,7 @@
                                                 <h6 class="mb-0">How To Purchase </h6>
                                             </div>
                                             <div class="col-sm-9 text-secondary">
-                                                <textarea id="mytextarea2" name="parchase_guide"> {{ $siteinfo->purchase_guide }} </textarea>
+                                                <textarea id="mytextarea2" name="purchase_guide"> {{ $siteinfo->purchase_guide }} </textarea>
                                             </div>
                                         </div>
 
@@ -130,10 +130,10 @@
 
                                         <div class="row mb-3">
                                             <div class="col-sm-3">
-                                                <h6 class="mb-0">facbook_link </h6>
+                                                <h6 class="mb-0">facebook_link </h6>
                                             </div>
                                             <div class="col-sm-9 text-secondary">
-                                                <input type="text" name="facbook_link" class="form-control"
+                                                <input type="text" name="facebook_link" class="form-control"
                                                     value="{{ $siteinfo->facebook_link }}">
                                             </div>
                                         </div>
@@ -142,10 +142,10 @@
 
                                         <div class="row mb-3">
                                             <div class="col-sm-3">
-                                                <h6 class="mb-0"> twitter_link </h6>
+                                                <h6 class="mb-0"> twiter_link </h6>
                                             </div>
                                             <div class="col-sm-9 text-secondary">
-                                                <input type="text" name="twitter_link" class="form-control"
+                                                <input type="text" name="twiter_link" class="form-control"
                                                     value="{{ $siteinfo->twiter_link }}">
                                             </div>
                                         </div>
