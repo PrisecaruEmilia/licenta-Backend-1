@@ -44,7 +44,7 @@
                                             </strong> </td>
 
                                         <td>
-                                            <a href="{{ route('category.edit', $item->id) }}"
+                                            <a href="{{ route('order.details', $item->id) }}"
                                                 class="btn btn-info">Details </a>
 
 
