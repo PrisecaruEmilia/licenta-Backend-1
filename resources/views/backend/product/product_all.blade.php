@@ -49,7 +49,7 @@
                                         <td>
                                             <a href="{{ route('product.edit', $item->id) }}" class="btn btn-info">Edit
                                             </a>
-                                            <a href="{{ route('category.delete', $item->id) }}" class="btn btn-danger"
+                                            <a href="{{ route('product.delete', $item->id) }}" class="btn btn-danger"
                                                 id="delete">Delete </a>
 
                                         </td>
