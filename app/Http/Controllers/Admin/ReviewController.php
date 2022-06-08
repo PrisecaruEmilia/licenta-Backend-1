@@ -35,4 +35,11 @@ class ReviewController extends Controller
         ]);
         return $result;
     }
+
+    public function GetAllReview()
+    {
+
+        $review = ProductReview::latest()->get();
+        return view('backend.review.review_all', compact('review'));
+    } // End Method
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ProductListController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\ReviewController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -119,3 +120,6 @@ Route::prefix('product')->group(function () {
 /// Contact Message Route
 Route::get('/all/message', [ContactController::class, 'GetAllMessage'])->name('contact.message');
 Route::get('/message/delete/{id}', [ContactController::class, 'DeleteMessage'])->name('message.delete');
+
+/// Product Review Route
+Route::get('/all/review', [ReviewController::class, 'GetAllReview'])->name('all.review');
