@@ -27,9 +27,9 @@
                     <hr>
                     <div class="form-body mt-4">
 
-                        <form method="post" action="{{ route('product.store') }}" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('product.update') }}" enctype="multipart/form-data">
                             @csrf
-
+                            <input type="hidden" name="id" value="{{ $product->id }}">
 
                             <div class="row">
                                 <div class="col-lg-8">
@@ -50,7 +50,7 @@
 
 
                                         <div class="mb-3">
-                                            <label for="formFile" class="form-label">Product Thumbnail </label>
+                                            <label for="image" class="form-label">Product Thumbnail </label>
                                             <input class="form-control" name="image" type="file" id="image">
                                         </div>
 
@@ -64,7 +64,7 @@
 
 
                                         <div class="mb-3">
-                                            <label for="formFile" class="form-label">Image One</label>
+                                            <label for="image_one" class="form-label">Image One</label>
                                             <input class="form-control" name="image_one" id="image_one" type="file">
                                         </div>
 
@@ -76,7 +76,7 @@
                                         @endforeach
 
                                         <div class="mb-3">
-                                            <label for="formFile" class="form-label">Image Two</label>
+                                            <label for="image_two" class="form-label">Image Two</label>
                                             <input class="form-control" name="image_two" id="image_two" type="file">
                                         </div>
 
@@ -88,7 +88,7 @@
                                         @endforeach
 
                                         <div class="mb-3">
-                                            <label for="formFile" class="form-label">Image Three</label>
+                                            <label for="image_three" class="form-label">Image Three</label>
                                             <input class="form-control" name="image_three" id="image_three" type="file">
                                         </div>
 
@@ -100,7 +100,7 @@
                                         @endforeach
 
                                         <div class="mb-3">
-                                            <label for="formFile" class="form-label">Image Four</label>
+                                            <label for="image_four" class="form-label">Image Four</label>
                                             <input class="form-control" name="image_four" id="image_four" type="file">
                                         </div>
 
